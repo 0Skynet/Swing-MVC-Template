@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.Date;
 import java.util.Observable;
 
 /**
@@ -12,20 +13,20 @@ import java.util.Observable;
  * @author skynet
  */
 public class MainModel extends Observable{
-    private String changeme;
+    private Date currentTime;
 
     public MainModel() {
-        this.changeme = "changeme";
+        this.currentTime = new Date();
     }
 
-    public String getChangeme() {
-        return changeme;
+    public Date getCurrentTime() {
+        return currentTime;
     }
 
-    public void setChangeme(String changeme) {
-        this.changeme = changeme;
-        
+    public void setCurrentTime(Date currentTime) {
+        this.currentTime = currentTime;
+                
         setChanged();
         notifyObservers();
-    }
+    }    
 }
